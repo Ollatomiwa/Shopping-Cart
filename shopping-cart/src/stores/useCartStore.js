@@ -1,4 +1,7 @@
-import { defineStore } from "pinia"
+import { defineStore } from "pinia";
+import {useToast} from "vue-toastification";
+
+const toast = useToast();
 
 export const useCartStore = defineStore('cart', {
     state: () => ({ 
@@ -28,13 +31,29 @@ export const useCartStore = defineStore('cart', {
             price: 400,
             image: 'https://cdn.pixabay.com/photo/2016/03/27/19/43/samsung-1283938_640.jpg'
         },
-      ]
+      ],
+      cartItems: []
     }),
     getters: {
+      countCartItems(state) {
+        return state.cartItems.length;
+      }
     },
     actions: {
-      increment() {
-        this.count++
+      addToCart(items) {
+        let index = this.cartItems.findIndex(product => product.id === items.id);
+        if(index !== -1) {
+          this.cartItems(index).quantity +=1;
+          toast.success("Your item has been updated ", {
+            timeout: 2000
+          });
+        } else {
+          items.quantity = 1;
+          this.cartItems.push(items);
+          toast.success("Your item has been saved ", {
+            timeout: 2000
+          });
+        }
+      }
       },
-    },
-  })
+  });

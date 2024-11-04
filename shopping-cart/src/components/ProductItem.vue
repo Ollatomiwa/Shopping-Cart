@@ -10,7 +10,9 @@
                     <p class="badge bg-danger">
                         $ {{ product.price }}
                     </p>
-                    <button class="btn btn-primary">
+                    <button 
+                        @click="data.addToCart(product)"
+                        class="btn btn-primary">
                         <i class="bi bi-cart-check"></i>
                         Add to cart
                     </button>
@@ -21,6 +23,11 @@
 </template>
 
 <script setup>
+
+    import { useCartStore } from '../stores/useCartStore';
+
+    const data = useCartStore();
+
     const props = defineProps({
         product: {
             type: Object,
