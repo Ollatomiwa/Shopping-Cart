@@ -35,6 +35,16 @@
                             <td>   {{ items.price }} </td>
                             <td>    {{ items.price * items.quantity }}</td>
                         </tr>
+                        <tr>
+                            <th class="text-center" colspan="3">
+                                Total
+                            </th>
+                            <td class="text-center" colspan="3">
+                                <span class="badge badge bg-danger rounded-pill">
+                                    ${{data.cartItems.reduce((acc, items) => acc+=items.price * items.quantity, 0)}}
+                                </span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
