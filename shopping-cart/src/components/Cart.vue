@@ -2,7 +2,7 @@
     <div class="row my-4">
         <div class="col md-12">
             <div class="card-body">
-                <div class="table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -18,19 +18,21 @@
                         <tr v-for="items in data.cartItems" :key="items.id">
                             <td>{{ items.id }}</td>
                             <td>
-                                <img :src={{ items.Image }}
+                                <img :src= "items.image"
                                     width="60"
-                                    height=""
+                                    height="60"
+                                    class="img-fluid rounded"
                                 alt="">
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                {{ items.name }}
+                            </td>
+                            <td> {{ items.quantity }} </td>
+                            <td>   {{ items.price }}</td>
+                            <td>    {{ items.price * items.quantity }}</td>
                         </tr>
                     </tbody>
-                </div>
+                </table>
             </div>
         </div>
     </div>
