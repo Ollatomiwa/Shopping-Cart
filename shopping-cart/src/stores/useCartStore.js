@@ -43,7 +43,7 @@ export const useCartStore = defineStore('cart', {
       addToCart(items) {
         let index = this.cartItems.findIndex(product => product.id === items.id);
         if(index !== -1) {
-          this.cartItems(index).quantity +=1;
+          this.cartItems[index].quantity +=1;
           toast.success("Your item has been updated ", {
             timeout: 2000
           });
@@ -54,6 +54,27 @@ export const useCartStore = defineStore('cart', {
             timeout: 2000
           });
         }
-      }
       },
-  });
+      incrementQ(items) {
+        let index = this.cartItems.findIndex(product => product.id === items.id);
+        if(index !== -1) {
+          this.cartItems[index].quantity +=1;
+          toast.success("Your item has been updated ", {
+            timeout: 2000
+          });
+        }
+      },  
+      decrementQ(items){
+        let index = this.cartItems.findIndex(product => product.id === items.id);
+        if(index !== -1) {
+          this.cartItems[index].quantity -=1;
+          if(this.cartItems[index].quantity === 0) {
+            this.cartItems = this.cartItems.filter(product => product.id !== items.id)
+          }
+          toast.success("Your item has been updated ", {
+            timeout: 2000
+          });
+        }
+      },
+    }
+});

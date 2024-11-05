@@ -27,8 +27,12 @@
                             <td>
                                 {{ items.name }}
                             </td>
-                            <td> {{ items.quantity }} </td>
-                            <td>   {{ items.price }}</td>
+                            <td> 
+                                <i class="bi bi-caret-up" @click="data.incrementQ(items)"></i>
+                                {{ items.quantity }} 
+                                <i class="bi bi-caret-down" @click="data.decrementQ(items)"></i>
+                            </td>
+                            <td>   {{ items.price }} </td>
                             <td>    {{ items.price * items.quantity }}</td>
                         </tr>
                     </tbody>
@@ -43,3 +47,8 @@
 
     const data = useCartStore();
 </script>
+<style>
+    i {
+        cursor:pointer;
+    }
+</style>
