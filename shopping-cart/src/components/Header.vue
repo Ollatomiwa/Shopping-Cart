@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar bg-dark navbar-expand-lg "data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">ComputLife Shopping Cart</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
