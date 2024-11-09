@@ -76,5 +76,11 @@ export const useCartStore = defineStore('cart', {
           });
         }
       },
+      removeItems (items) {
+        this.cartItems = this.cartItems.filter(product => product.id !== items.id)
+        toast.success("Your item has been removed ", {
+          timeout: 2000
+        });
+      }
     }
 });

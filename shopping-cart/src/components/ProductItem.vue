@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, autem?</p>
-                    <p class="badge bg-danger">
+                    <p class="badge bg-danger mx-4">
                         $ {{ product.price }}
                     </p>
                     <button 
