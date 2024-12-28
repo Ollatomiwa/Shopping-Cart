@@ -25,8 +25,10 @@
 <script setup>
 
     import { useCartStore } from '../stores/useCartStore';
+   
 
     const data = useCartStore();
+    
 
     const props = defineProps({
         product: {
