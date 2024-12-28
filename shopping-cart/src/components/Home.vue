@@ -1,5 +1,5 @@
 <template>
-    <div class="row my-4">
+    <div class="row my-4 py-4">
         <ProductItem v-for = "product in data.products"
         key="product.id" :product= "product"/>
     </div>

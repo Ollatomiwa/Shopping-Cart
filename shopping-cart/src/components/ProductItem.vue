@@ -1,6 +1,6 @@
 <template>
     
-        <div class="col-md-4 mb-2">
+        <div class="col-md-4 mb-2 ">
             <div class="card" style="width:'18rem'">
                 <img :src="product.image" class="card-img-top" 
                 height="300" >

@@ -1,5 +1,5 @@
 <template>
-    <div class="row my-4">
+    <div class="row my-5 py-4">
         <div class="col md-12">
             <div class="card-body">
                 <table class="table">
